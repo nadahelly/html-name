@@ -303,15 +303,35 @@ legend {
   height: 300px;
 }
 
-.wrap {
-  width: 1200px;
-  margin: 0 auto;
+.container {
+  padding: 0 4%;
 }
-.wrap header {
-  height: 100px;
-  background: #ff0000;
+
+#header {
+  border-bottom: 1px solid #000;
 }
-.wrap .slide {
-  height: 300px;
-  background: #3700ff;
+#header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+#header .lst-util {
+  display: flex;
+}
+#header .lst-util .bnt-g {
+  width: 40px;
+  height: 70px;
+}
+#header .lst-util .bnt-g::before {
+  font-size: 20px;
+  font-family: "Font Awesome 6 Free";
+}
+#header .lst-util .btn-search::before {
+  content: "\f002";
+  font-weight: 900;
+}
+#header .lst-util .btn-burger::before {
+  content: "\f007";
+  font-weight: 400;
 }/*# sourceMappingURL=comm.css.map */
