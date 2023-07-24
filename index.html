@@ -52,7 +52,10 @@
     <link rel="stylesheet" href="./dist/css/comm.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="./dist/js/comm.js"></script>
+    <script defer src="./dist/js/include.js"></script>
+    <script defer src="./dist/js/comm.js"></script>
+
+    <!-- defer| html 다읽고 읽어죠 -->
   </head>
   <body>
     <div id="u-skip">
@@ -63,52 +66,29 @@
     <style></style>
     <div class="wrap">
       <!-- 로고가 왼쪽에 있는 타입 -->
-      <header id="header" class="container">
-        <div class="inner">
-          <h1 id="logo">
-            <a href="#">logo</a>
-          </h1>
-          <div class="head__right">
-            <div class="util">
-              <ul class="util__list">
-                <li>
-                  <!-- a : 링크 연결 / button : 동작처리 -->
-                  <!-- 링크 연결 없이 스크립트 처리 -->
-                  <a href="javascript:void(0)">
-                    <span class="material-icons-outlined">language</span>
-                  </a>
-                </li>
-                <li>
-                  <!-- class="역할-이름" -->
-                  <button class="bnt-g btn-search">
-                    <!-- 글씨는 블라인드에 넣어 숨기기 | 아이콘은 가상으로 만들기 -->
-                    <span class="material-icons-outlined">search</span>
-                    <span class="blind">검색</span>
-                  </button>
-                  <!-- button은 열리고 닫힐수 있음-검색 모달창 열리기 가능 | 다른페이지 열리면 a태그 사용 -->
-                </li>
-                <li>
-                  <a href="#" class="bnt-g btn-my">
-                    <span class="material-icons-outlined">account_circle</span>
-                    <span class="blind">마이페이지</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <nav class="gnb-wrap">
-              <input type="checkbox" name="gnbNav" id="gnbNav" class="input-burger" checked>
-              <label for="gnbNav" class="label-burger">
-                <span class="blind">전체 메뉴 보기</span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-              </label>
-              <div id="gnb">navi</div>
-            </nav>
-          </div>
-        </div>
+      <header data-include-path="./outline/header.html">
       </header>
-      <div class="slide-wrap slide-name">slide</div>
+
+      <div class="swiper slide-g slide-intro">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img 
+            src="https://images.unsplash.com/photo-1661956603025-8310b2e3036d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+            alt="">
+          <div class="swiper-slide__txt">
+            <strong>제목</strong>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, nemo.</p>
+            <a href="#">바로가기</a>
+          </div>
+          </div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+        <div class="swiper-pagination"></div>
+      </div>
+
       <main id="main">
         <!-- section | 제목이 있는 그룹 -->
         <!-- <section class="section-g(공통) section-title(개별제목)"> -->
@@ -120,9 +100,29 @@
         </section>
         <section class="container section-g section-shopping">
           <div class="inner">
-            <h2 class="section-tit">섹션 제목</h2>
+            <h2 class="section-tit" >섹션 제목</h2>
+            <ul class="list-event">
+              <li>
+                <img 
+                src="https://images.unsplash.com/photo-1689891750093-167fe3256c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=682&q=80" 
+                alt="영양">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, excepturi?</p>
+              </li>
+              <li>
+                <img 
+                src="https://images.unsplash.com/photo-1689891750093-167fe3256c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=682&q=80" 
+                alt="영양">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, excepturi?</p>
+              </li>
+              <li>
+                <img 
+                src="https://images.unsplash.com/photo-1689891750093-167fe3256c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=682&q=80" 
+                alt="영양">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, excepturi?</p>
+              </li>
+            </ul>
             <div class="section-contents">
-              <ul class="lst-shopping">
+              <ul class="lst-thumb-two-column">
                 <li>
                   <a href="#">
                     <div class="thumb-shopping">
@@ -206,8 +206,8 @@
           </div>
         </section>
       </main>
-      <footer id="footer" class="container">
-        <div class="inner">풋터</div>
+      <footer data-include-path="./outline/footer.html">
+
       </footer>
     </div>
   </body>

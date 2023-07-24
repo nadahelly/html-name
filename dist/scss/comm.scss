@@ -17,10 +17,15 @@
 // header
 #header {
   border-bottom: 1px solid #000;
+  background: $w;
   // border-bottom: 1px solid $b;
   // 헤더는 보통 1000 값
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+  box-sizing: border-box;
   .inner {
     display: flex;
     align-items: center;
@@ -102,6 +107,7 @@
     flex-direction: column;
     width: 40px;
     height: $headerHeight;
+    cursor: pointer;
     .bar {
       display: block;
       width: 26px;
@@ -131,6 +137,44 @@
   }
 }
 
+// slide
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  height: 100vh;
+  text-align: center;
+  font-size: 18px;
+  background: #ffc1c1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // width: 100%;
+    // height: 100%; 이렇게 써도됨
+    background: rgba(0, 0, 0,0.5);
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 // main
 .section-g {
@@ -154,87 +198,7 @@
 //   .b {
 //   }
 // }
-.section-shopping {
-  .lst-shopping {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  li {
-    // 이미지를 두장씩 넣고싶으면 width 50%
-    // 사이에 공간 생기게 하려면 %줄이고 j-c:s-b넣기
-    // width: 49%;
-    // 20px 공간 줄때 calc 사용/간격고정
-    margin-bottom: $spacingList;
-    width: calc(50% - $spacingList / 2);
 
-    .thumb-shopping {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      height: 200px;
-      border-radius: 4px;
-      // 이미지 위로 올라와야해서 after 사용
-      &::before {
-        content: "";
-        display: block;
-        height: 0;
-        padding-top: 100%;
-      }
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 0 50%;
-        transition: transform 0.3s;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: inherit;
-        border: 1px solid rgba($b, 0.06);
-        background: rgba($b, 0.03);
-      }
-    }
-    // img {
-    //   object-fit: cover;
-    //   object-position: 50% 50%;
-    //   width: 100%;
-    //   height: 100%;
-    //   transition: transform 0.3s;
-
-    // }
-  }
-  a {
-    &:hover{
-      img {
-        transform: scale(1.5);
-      }
-    }
-  }
-  // strong태그는 inline요소임 - block요소로 바꿔주기
-  .txt-shopping {
-    margin-top: 10px;
-    .txt-shopping__tit {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 14px;
-      color: $titDefult;
-    }
-    .txt-shopping__desk {
-      font-size: 12px;
-    }
-  }
- }
-}
 
 
 
@@ -243,4 +207,10 @@
 #footer {
   margin-bottom: 200px;
   border-top: 10px solid $b;
+}
+
+#main {
+  .section-contents {
+
+  }
 }
