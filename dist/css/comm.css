@@ -299,6 +299,9 @@ legend {
   content: "";
 }
 
+.slide-intro {
+  margin-top: 70px;
+}
 .slide-intro .swiper-slide__txt {
   position: absolute;
   z-index: 1;
@@ -419,6 +422,10 @@ legend {
 
 .bg-gray {
   background: #eee;
+}
+
+.wrap {
+  padding: 70px;
 }
 
 #header {
